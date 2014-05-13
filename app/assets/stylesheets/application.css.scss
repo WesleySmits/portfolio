@@ -10,11 +10,10 @@
  *
  *= require_self
  *= require foundation_and_overrides
- *= require_tree .
+ //*= require_tree .
  */
 
 @import 'mixins';
 @import 'extends';
 @import 'foundation_and_overrides';
-@import 'home';
 @import 'hover-min';

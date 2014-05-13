@@ -1,6 +1,6 @@
 class ProjectsController < ApplicationController
   include ProjectsHelper
-
+  
   def index
     @projects = Project.all
   end
