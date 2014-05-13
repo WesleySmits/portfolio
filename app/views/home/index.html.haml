@@ -1,0 +1,81 @@
+%section#intro.block{:role => 'banner'}
+	.container
+		.welcome
+			%h1.intro-title I love Webdevelopment
+			%p.intro-caption 	Hi, my name is Wesley Smits! I am from a small town in The Netherlands and i have a passion for creating awesome websites using responsive webdesign and progressive enhancement best practices.
+
+%section#about-me.block
+	.container
+		%h2.title About me
+		.row
+			%section{:class => 'small-10 small-offset-1 large-6 large-offset-0 columns'}
+				%h3 Who am I?
+				%p I was born on the 5th of September 1993 in Dordrecht. Moved to Papendrecht a couple of years later and i've lived there ever since. Spent most of my days gaming and my dream was to eventually become a game developer.
+
+				%p When I got in contact with webdevelopment and SEO at the age of 15 I decided to go into webdevelopment. After finishing highschool I signed up for a 'Mediatechnology', a study at The University of Rotterdam.
+			%section{:class => 'small-10 small-offset-1 large-6 large-offset-0 columns'}
+				%h3 What do I do?
+				%p
+					I'm a frontend webdeveloper and 
+					%abbr{:title => 'Search Engine Optimizer'} SEO
+					, This means i am able to build websites using HTML5, CSS3 and Javascript.
+					I also know a thing or two about backend development and I have experience with PHP, MySQL and Rails.
+				%p
+					Besides building a website using development best practices I'm also able to optimize a site both on-page and off-page so that it has a good potential to rank in the search engines. Only white-hat Google preferred tactics of course.
+			%section
+				%h3{:class => 'small-3 small-centered columns'} My skillset
+				%ul{:class => 'small-block-grid-1 medium-block-grid-3 large-block-grid-6 skillset'}
+					%li
+						%h4 HTML5
+					%li
+						%h4 CSS3
+					%li
+						%h4 Javascript
+					%li
+						%h4
+							%abbr{:title => 'Search Engine Optimization'} SEO
+					%li
+						%h4
+							%abbr{:title => 'Responsive Web Design'} RWD
+
+%section#portfolio.block
+	.container
+		%h2.title Portfolio
+
+		%section.project
+			.left
+				%h3 Butzi - Q&A Community
+				%p.description For a vintage restorations centre in Rotterdam, called MEC, my team and I created a Q&A community for people that own or have interest in a vintage car. In the community they can ask and answer questions, plus find local support or carparts to buy. I was responsible for the front-end, search engine optimization and pagespeed.
+			.right
+				.project-slider	
+					= image_tag "http://www.magcaa.com/includes/img/placeholder/Butzi/4.jpg", :class => 'project-img', :width => '644'
+					= image_tag "http://www.magcaa.com/includes/img/placeholder/Butzi/0.jpg", :class => 'project-img', :width => '644'
+				%a.previous
+				%a.next
+
+		%ul{:class => 'small-block-grid-2 medium-block-grid-3 large-block-grid-4'}
+			%li.project-thumb.fabriq
+				= image_tag "fabriq-logo.png", :class => 'grow'
+			%li.project-thumb.vicinity
+				= image_tag "verkeersschool-vicinity-logo.png", :class => 'pulse'
+			%li.project-thumb.butzi
+				= image_tag "butzi-logo.png", :class => 'buzz'
+			%li.project-thumb.tord
+				= image_tag "truth-or-dare-logo.png", :class => 'rotate'
+			%li.project-thumb.approxiv
+				= image_tag "approxiv-logo.png", :class => "pop"
+			%li.project-thumb.vicinity
+				= image_tag "verkeersschool-vicinity-logo.png", :class => 'grow'
+			%li.project-thumb.butzi
+				= image_tag "butzi-logo.png", :class => 'rotate'
+			%li.project-thumb.tord
+				= image_tag "truth-or-dare-logo.png", :class => 'pulse'
+			.test
+				- @projects.each do |project|
+					= image_tag project.image
+
+
+
+%section#contact.block
+	.container
+		%h2.title Contact Me
