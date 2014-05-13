@@ -24,6 +24,10 @@ gem 'jquery-rails'
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
 
+gem 'simple_form'
+
+gem 'select2-rails'
+
 # Build JSON APIs with ease. Read more: https://github.com/rails/jbuilder
 gem 'jbuilder', '~> 1.2'
 
@@ -38,9 +42,16 @@ gem 'haml-rails'
 
 # CSS framework
 gem 'zurb-foundation'
+gem 'foundation-rails'
+gem 'jquery-fileupload-rails'
 
 # File attachment gem
 gem 'paperclip'
+
+group :development do
+  gem "better_errors"
+  gem "binding_of_caller"
+end
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
