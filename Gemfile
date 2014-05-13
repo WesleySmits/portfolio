@@ -32,11 +32,14 @@ group :doc do
   gem 'sdoc', require: false
 end
 
+# HTML templating language
 gem 'haml'
 gem 'haml-rails'
 
+# CSS framework
 gem 'zurb-foundation'
 
+# File attachment gem
 gem 'paperclip'
 
 # Use ActiveModel has_secure_password
