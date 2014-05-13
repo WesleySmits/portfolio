@@ -12,8 +12,17 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery-fileupload/basic
+//= require jquery-fileupload/vendor/tmpl
 //= require foundation
 //= require turbolinks
 //= require_tree .
+//= require select2
 
-$(function(){ $(document).foundation(); });
+$(function(){
+  $(document).foundation();
+
+  $('.select2').select2({
+    width: '100%'
+  });
+});
