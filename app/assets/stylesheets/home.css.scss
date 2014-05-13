@@ -1,0 +1,197 @@
+html, body {
+	width:100%;
+	height:100%;
+	font-size: 100%;
+}
+
+img {
+	max-width: 100%;
+}
+
+#header {
+	.container {
+		position: absolute;
+		top: 50px;
+		z-index: 10;
+	}
+
+	#logo {
+		margin: 0;
+		& a { color: #ffffff; }
+	}
+
+	#primary-navigation {
+
+		ul { list-style-type: none; }
+		li { display: inline-block; padding:13px 20px;}
+		a { color: #ffffff; }
+	}
+}
+
+@-moz-keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+@-o-keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 100%; }
+}
+@-webkit-keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 100%; }
+}
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 100%; }
+}
+
+#intro {
+	min-height: 600px;
+	height: 100%;
+	text-align: center;
+	position: relative;
+
+	background-color: #000000;
+	background-image:
+	radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 50px),
+	radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+	radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+	radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+
+	background-image: url(../images/wolken.png), url(../images/sterren.png);
+	background-image: image-url("wolken.png"), image-url("sterren.png");
+	background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+
+	-moz-animation: animatedBackground 20s linear infinite;
+	-webkit-animation: animatedBackground 20s linear infinite;
+	-o-animation: animatedBackground 20s linear infinite;
+	animation: animatedBackground 20s linear infinite;
+
+	.welcome {
+		width: 80%;
+		max-width: 1170px;
+		position: absolute;
+		top: 40%;
+		left: 20%;
+	}
+
+	.intro-title {
+		font-size: 2em;
+		letter-spacing: -0.05em;
+		@media #{$medium-up} { font-size: 4em; }
+		@media #{$large-up} { font-size: 6em; }
+	}
+	.intro-caption {
+		font-size: 1em;
+
+		@media #{$medium-up} { font-size: 2em; }
+	}
+	.intro-title, .intro-caption {
+		color: #fff;
+	}
+}
+
+#about-me {
+	background: #f5f5f5;
+	height: 100%;
+	color: #6b6b6b;
+
+	h2, h3, h4 { color: inherit; padding: 20px 0; }
+	abbr { color: inherit; }
+	.skillset li {
+		background: black;
+		color: white;
+		padding: 30px;
+		margin-right: 20px;
+		text-align: center;
+	}
+
+	.row {
+		@extend %clearfix;
+	}
+
+}
+
+#portfolio {
+	min-height: 100%;
+	background: #eceef1;
+
+	li { 
+		width: 253px;
+		height: 250px;
+		overflow: hidden;
+		border: 3px solid #000;
+		padding: 0;
+		margin: 20px 20px;
+		position: relative;
+
+		&.butzi { background: #f1c40f; }
+		&.fabriq { background: #2ecc71;}
+		&.tord { background: #0081E9;}
+		&.vicinity { background: #ecf0f1;}
+		&.approxiv { background: #bdc3c7; }
+	}
+	img {
+		-webkit-transition: all 200ms ease-out;
+		-moz-transition: all 200ms ease-out;
+		-o-transition: all 200ms ease-out;
+		transition: all 200ms ease-out; 
+	}
+
+	.project {
+		@extend %clearfix;
+		height: 500px;
+
+		.left {
+			float: left;
+			width: 40%;
+		}
+		.right {
+			float: right;
+			width: 55%;
+			height: 100%;
+			position: relative;
+
+			.project-img {
+				position: absolute;
+			}
+			.previous {
+				@include sliderArrows(left);
+			}
+			.next {
+				@include sliderArrows(right);
+			}
+		}
+
+		.project-slider {
+			img {
+				opacity: 0;
+				-webkit-transition: all 1s ease-in-out;
+		    -moz-transition: all 1s ease-in-out;
+		    -o-transition: all 1s ease-in-out;
+		    -ms-transition: all 1s ease-in-out;
+		    transition: all 1s ease-in-out;
+
+				&.current {
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+}
+
+.full-height {
+	height: 100%;
+}
+.container {
+	width: 100%;
+	max-width: 1170px;
+	margin: 0 auto;
+}
+.block {
+	padding: 70px 0;
+
+	.title { font-size: 3.5em; text-align: center; padding: 70px 0; }
+
+}
