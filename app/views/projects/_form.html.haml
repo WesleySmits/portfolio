@@ -1,0 +1,17 @@
+= form_for(@project) do |f|
+  %ul
+    - @project.errors.full_messages.each do |error|
+      %li= error
+  .row
+    .small-1.columns    
+      = f.label :name, :class => "left inline"
+    .small-11.columns
+      = f.text_field :name
+  .row
+    .small-1.columns
+      = f.label :description, :class => "left inline"
+    .small-11.columns 
+      = f.text_area :description
+  .row
+    .small-9.small-offset-1.columns
+      = f.submit nil ,:class => "button [radius round]"
