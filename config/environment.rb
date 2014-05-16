@@ -6,3 +6,6 @@ PortfolioNew::Application.initialize!
 
 # Specify the config File
 APP_CONFIG = YAML.load_file("#{Rails.root}/config/config.yml")
+
+#Paperclip command path for ImageMagick
+Paperclip.options[:command_path] = "/usr/local/bin/"
