@@ -2,5 +2,9 @@
 	= @project.name
 %p.description
 	= @project.description
-
-= link_to 'Back to project overview page', projects_path, :class => "button [radius round]"
+- if @project.image.exists? then
+	= image_tag @project.image.url
+%br
+= link_to 'Back to overview page', projects_path, :class => "button [radius round]"
+= link_to 'Edit project', edit_project_path(@project), :class => "button [radius secondary round]"
+= link_to 'Delete project', project_path(@project), :class => "button [radius alert round]", :method => :delete, data: { confirm: "Are you sure you want to delete this project?"}
