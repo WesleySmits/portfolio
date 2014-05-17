@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
 	include ArticlesHelper
+	layout "article"
   
   def index
     @articles = Article.all
