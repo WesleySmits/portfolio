@@ -1,3 +1,96 @@
-// Place all the styles related to the articles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+$link-color: #1fb2ff;
+
+a:hover {
+	text-decoration: underline;
+}
+
+body.blog {
+	background: #F2F2F2;
+	font-family: 'Open Sans', sans-serif !important;
+	color: #777;
+	font-size: 14px;
+	line-height: 1.65;
+	-webkit-font-smoothing: antialiased;
+
+	#header {
+		max-width: none;
+		background: #373737;
+
+		.container {
+			position: relative;
+			top: 0;
+			padding: 10px 0 75px 0;
+		}
+
+		h1, nav{
+			padding-left: 0;
+			padding-right: 0;
+		}
+
+		h1 a {
+			text-transform: uppercase;
+			font-weight: bold;
+			line-height: 50px;
+			color: #FEFEFE;
+			font-size: 40px;
+			font-family: 'Open Sans', sans-serif;
+		}
+	}
+	#content {
+		//padding: 70px;
+	}
+
+	.intro {
+		background: #1fb2ff;
+		color: #fff;
+		padding: 30px 0;
+
+		.title {
+			margin-top: 0;
+			color: inherit;
+			border-bottom: 1px solid #fff;
+			padding-bottom: 5px;
+			display: inline;
+		}
+		.tagline {
+			margin-top: 10px;
+		}
+	}
+
+	#posts {
+		margin-top: 50px;
+	}
+
+	li.post {
+		border: 1px solid #ddd;
+		background: #fff;
+		margin: 20px;
+		width: 360px;
+
+		&:nth-child(3n) { margin-right: 0;}
+
+		.post-title {
+			text-align: center;
+			border-bottom: 1px solid #ddd;
+			padding: 10px 10px;
+			font-size: 13px;
+
+			a {
+				text-transform: uppercase;
+				color: #666;
+				font-size: 16px;
+				line-height: 20px;
+
+				&:hover { color: $link-color; }
+			}
+		}
+		img {
+			width: 100%;
+		}
+	}
+
+
+
+
+
+}
