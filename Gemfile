@@ -44,7 +44,7 @@ gem 'haml-rails'
 gem 'redcarpet'
 
 # Syntax highlighter
-gem 'albino'
+gem 'pygments.rb'
 
 # HTML / XML parser
 gem 'nokogiri'
