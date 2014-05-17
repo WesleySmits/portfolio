@@ -46,6 +46,9 @@ gem 'redcarpet'
 # Syntax highlighter
 gem 'albino'
 
+# HTML / XML parser
+gem 'nokogiri'
+
 # CSS framework
 gem 'zurb-foundation'
 gem 'foundation-rails'

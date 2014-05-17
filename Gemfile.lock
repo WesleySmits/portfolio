@@ -75,8 +75,11 @@ GEM
       mime-types (~> 1.16)
       treetop (~> 1.4.8)
     mime-types (1.25.1)
+    mini_portile (0.6.0)
     minitest (4.7.5)
     multi_json (1.10.0)
+    nokogiri (1.6.2.1)
+      mini_portile (= 0.6.0)
     paperclip (4.1.1)
       activemodel (>= 3.0.0)
       activesupport (>= 3.0.0)
@@ -157,6 +160,7 @@ DEPENDENCIES
   jbuilder (~> 1.2)
   jquery-fileupload-rails
   jquery-rails
+  nokogiri
   paperclip
   rails (= 4.0.3)
   redcarpet
