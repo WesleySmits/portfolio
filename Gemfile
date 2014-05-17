@@ -62,6 +62,15 @@ group :development do
   gem "binding_of_caller"
 end
 
+# Forms, mail
+gem 'mail_form', '~> 1.5.0.rc'
+
+# Development Guard
+gem 'guard-rails', group: :development
+gem 'guard-livereload', group: :development
+gem 'rack-livereload', group: :development
+gem 'guard-bundler', group: :development
+
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.1.2'
 
