@@ -43,6 +43,9 @@ gem 'haml-rails'
 # Markdown interpreter
 gem 'redcarpet'
 
+# Syntax highlighter
+gem 'albino'
+
 # CSS framework
 gem 'zurb-foundation'
 gem 'foundation-rails'
