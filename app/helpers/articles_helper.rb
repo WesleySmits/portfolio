@@ -1,6 +1,6 @@
 module ArticlesHelper
 	def article_params
-		params.require(:article).permit(:name, :description, :image, images_attributes: [:image])
+		params.require(:article).permit(:title, :body, :image, images_attributes: [:image])
 	end
 
 	def find_article
