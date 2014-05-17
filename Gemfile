@@ -40,6 +40,9 @@ end
 gem 'haml'
 gem 'haml-rails'
 
+# Markdown interpreter
+gem 'redcarpet'
+
 # CSS framework
 gem 'zurb-foundation'
 gem 'foundation-rails'
