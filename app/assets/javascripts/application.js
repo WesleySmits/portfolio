@@ -16,16 +16,17 @@
 //= require jquery-fileupload/vendor/tmpl
 //= require foundation
 //= require turbolinks
-//= require_tree .
 //= require select2
+//= require_tree .
+
 
 $(function(){
   $(document).foundation();
 
-  $('.select2').select2({
+  /*$('.select2').select2({
     width: '100%'
   });
-
+  */
   $('a[href^="#"]').on('click', function(e) {
         e.preventDefault();
 
