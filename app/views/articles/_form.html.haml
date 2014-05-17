@@ -1,0 +1,31 @@
+= form_for(@article, :html => { :multipart => true }) do |f|
+  %ul
+    - @article.errors.full_messages.each do |error|
+      %li= error
+  .row
+    .small-1.columns    
+      = f.label :title, :class => "left inline"
+    .small-11.columns
+      = f.text_field :title
+  .row
+    .small-1.columns
+      = f.label :body, :class => "left inline"
+    .small-11.columns 
+      = f.text_area :body, :rows => "10"
+  .row
+    .small-1.columns
+      = f.label :slug, :class => "left inline"
+    .small-11.columns
+      = f.text_field :slug
+  .row
+    .small-1.columns
+      = f.label :image, :class => "left inline"
+    .small-11.columns
+      = f.file_field :image
+  .row
+    .small-9.small-offset-1.columns
+      = f.submit nil ,:class => "button [radius round]"
+
+%script#template-upload{type: "text/x-tmpl"}
+  :cdata
+    <div class="upload">{%=o.name%}<div class="progress"><div class="progress-bar bar" style="width: 0%"></div></div></div>
