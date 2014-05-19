@@ -185,6 +185,7 @@ img {
 
 #contact {
 	color: #fff;
+	min-height: 100%;
 
 	.title { color: inherit; }
 	section{ background-color: #fff; }
@@ -205,7 +206,7 @@ img {
 	-o-animation: animatedBackground 20s linear infinite;
 	animation: animatedBackground 20s linear infinite;
 
-	.social {
+	.social, .contact-form {
 		border: 1px solid;
 		padding: 20px;
 		h3 {
@@ -280,5 +281,4 @@ img {
 	padding: 70px 0;
 
 	.title { font-size: 3.5em; text-align: center; padding: 70px 0; }
-
 }

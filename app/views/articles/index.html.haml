@@ -12,39 +12,13 @@
 				%p.post-excerpt
 					What is a title tag? The title tag is the main description of an online document. It is a very important on-page element for SEO. It is very simple to add to any html document by specifying the title element within the section. Example ...
 					= link_to 'Read more...', articles_path
-			%li.post
-				%h2.post-title 
-					%a{} 7 Best practices for awesome meta titles
-				= image_tag 'http://static.wesleysmits.com/img/html-title-tag.jpg', :title => 'test', :alt => 'test'
-				%p.post-excerpt
-					What is a title tag? The title tag is the main description of an online document. It is a very important on-page element for SEO. It is very simple to add to any html document by specifying the title element within the section. Example ...
-					= link_to 'Read more...', articles_path
-			%li.post
-				%h2.post-title 
-					%a{} 7 Best practices for awesome meta titles
-				= image_tag 'http://static.wesleysmits.com/img/html-title-tag.jpg', :title => 'test', :alt => 'test'
-				%p.post-excerpt
-					What is a title tag? The title tag is the main description of an online document. It is a very important on-page element for SEO. It is very simple to add to any html document by specifying the title element within the section. Example ...
-					= link_to 'Read more...', articles_path
-			%li.post
-				%h2.post-title 
-					%a{} 7 Best practices for awesome meta titles
-				= image_tag 'http://static.wesleysmits.com/img/html-title-tag.jpg', :title => 'test', :alt => 'test'
-				%p.post-excerpt
-					What is a title tag? The title tag is the main description of an online document. It is a very important on-page element for SEO. It is very simple to add to any html document by specifying the title element within the section. Example ...
-					= link_to 'Read more...', articles_path
-			%li.post
-				%h2.post-title 
-					%a{} 7 Best practices for awesome meta titles
-				= image_tag 'http://static.wesleysmits.com/img/html-title-tag.jpg', :title => 'test', :alt => 'test'
-				%p.post-excerpt
-					What is a title tag? The title tag is the main description of an online document. It is a very important on-page element for SEO. It is very simple to add to any html document by specifying the title element within the section. Example ...
-					= link_to 'Read more...', articles_path
-			%li.post
-				%h2.post-title 
-					%a{} 7 Best practices for awesome meta titles
-				= image_tag 'http://static.wesleysmits.com/img/html-title-tag.jpg', :title => 'test', :alt => 'test'
-				%p.post-excerpt
-					What is a title tag? The title tag is the main description of an online document. It is a very important on-page element for SEO. It is very simple to add to any html document by specifying the title element within the section. Example ...
-					= link_to 'Read more...', articles_path
+			- @articles.each do |article|
+				%li.post
+					%h2.post-title
+						= link_to article.title, article_path(article)
+					- if article.image.exists? then
+						= image_tag article.image.url(:medium), :title => article.title
+					%p.post-excerpt
+						= article.body.gsub(/[^0-9a-z ?.,:"']/i, '')
+					= link_to 'Read more...', article_path(article)
 			

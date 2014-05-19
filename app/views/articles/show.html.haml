@@ -1,12 +1,30 @@
-#post
+.intro
 	.container
-		%h1.title
-			= @article.title
-		//- if @article.image.exists? then
-		//	= image_tag @article.image.url
+		%h2.title= @article.title
+
+.container.row
+	#post-wrapper.small-10.small-offset-1.large-7.large-offset-0.columns
+		- if @article.image.exists? then
+			= image_tag @article.image.url
 		%p.body
 			= markdown @article.body
-		%br
-		= link_to 'Back to overview page', articles_path, :class => "button [radius round]"
-		= link_to 'Edit article', edit_article_path(@article), :class => "button [radius secondary round]"
-		= link_to 'Delete article', article_path(@article), :class => "button [radius alert round]", :method => :delete, data: { confirm: "Are you sure you want to delete this article?"}
+
+	%aside#sidebar.small-10.small-offset-1.large-4.large-offset-0.columns
+		.widget
+			%h3.widget-title Recent Posts
+			.widget-content
+				%ul
+					- @articles.each do |article|
+						%li
+							= link_to article.title, article_path(article), :class => 'item-title'
+							.itemContent
+								%p
+									= article.body.gsub(/[^0-9a-z ?.,:"']/i, '').truncate(80)
+									= link_to 'Read more', article_path(article)
+
+
+
+= link_to 'Back to overview page', articles_path, :class => "button [radius round]"
+= link_to 'Edit article', edit_article_path(@article), :class => "button [radius secondary round]"
+= link_to 'Delete article', article_path(@article), :class => "button [radius alert round]", :method => :delete, data: { confirm: "Are you sure you want to delete this article?"}
+

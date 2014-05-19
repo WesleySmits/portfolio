@@ -8,6 +8,7 @@ class ArticlesController < ApplicationController
 
   def show
     find_article
+    @articles = Article.all.limit(5)
   end
 
   def new
