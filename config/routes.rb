@@ -3,4 +3,5 @@ PortfolioNew::Application.routes.draw do
 	root 'home#index'
   resources :projects
   resources :articles
+  resources "contacts", only: [:new, :create]
 end
