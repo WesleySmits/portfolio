@@ -10,11 +10,12 @@
  *
  *= require mixins
  *= require extends
+ *= require font-awesome
  *= require_self
  *= require foundation_and_overrides
  *= require_tree .
  */
 
-@import 'font-awesome.min';
+@import "font-awesome";
 
 .hidden { display: none;}

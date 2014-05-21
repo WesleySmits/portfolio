@@ -22,5 +22,10 @@
 						= article.body.gsub(/[^0-9a-z ?.,:"']/i, '').truncate(250)
 						= link_to 'Read more', article_path(article)
 					.post-meta
-						%i.fa.fa-calender
-						%span.time= distance_of_time_in_words_to_now(article.created_at) + ' Ago'			
+						.left
+							%i.fa.fa-calendar
+							%span.time= distance_of_time_in_words_to_now(article.created_at) + ' Ago'
+						.right
+							%i.fa.fa-comments-o
+							%span.comments 2 comments
+
