@@ -40,6 +40,9 @@ end
 gem 'haml'
 gem 'haml-rails'
 
+# Font awesome icon set
+gem 'font-awesome-rails'
+
 # Markdown interpreter
 gem 'redcarpet'
 
