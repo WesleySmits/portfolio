@@ -91,6 +91,10 @@ body.blog {
 				&:hover { color: $link-color; }
 			}
 		}
+		.post-excerpt {
+			padding-bottom: 10px;
+			border-bottom: 1px solid #ddd;
+		}
 		img {
 			width: 100%;
 		}

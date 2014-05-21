@@ -1,13 +1,15 @@
+@import 'extends';
+
 $link-color: #1fb2ff;
 
 #post-wrapper, #sidebar {
-	border: 1px solid #ddd;
 	margin-top: -20px;
-	background: #fff;
 }
 
 #post-wrapper {
 	padding: 20px;
+	background: #fff;
+	border: 1px solid #ddd;
 
 	h2, h3 {
 	margin-top: 20px;
@@ -39,10 +41,22 @@ $link-color: #1fb2ff;
 		margin: 0;
 		padding: 0;
 	}
-	li {
+	.recent-posts li {
 		list-style-type: none;
 		border-bottom: 1px solid #C2C2C2;
 		padding: 10px 0;
+	}
+	.social li {
+		list-style-type: none;
+		display: inline-block;
+		& img { margin-right: 20px; }
+	}
+
+	.widget {
+		margin-bottom: 30px;
+		background: #fff;
+		border: 1px solid #ddd;
+		padding: 20px;
 	}
 
 	.widget-title {
@@ -51,7 +65,7 @@ $link-color: #1fb2ff;
 	}
 
 	.widget-content {
-
+		@extend %clearfix;
 		p {
 			margin:0;
 		}
@@ -67,4 +81,16 @@ $link-color: #1fb2ff;
 			color: $link-color;
 		}
 	}
+}
+
+// Social
+#___plusone_0, #plus-button {
+	margin-right: 20px!important;
+	display: inline-block;
+	height: 22px!important;
+	float: left!important;
+}
+.fb-like {
+	float: left!important;
+	margin-right: 20px!important;
 }

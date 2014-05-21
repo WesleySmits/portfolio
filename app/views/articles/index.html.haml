@@ -19,6 +19,8 @@
 					- if article.image.exists? then
 						= image_tag article.image.url(:medium), :title => article.title
 					%p.post-excerpt
-						= article.body.gsub(/[^0-9a-z ?.,:"']/i, '')
-					= link_to 'Read more...', article_path(article)
-			
+						= article.body.gsub(/[^0-9a-z ?.,:"']/i, '').truncate(250)
+						= link_to 'Read more', article_path(article)
+					.post-meta
+						%i.fa.fa-calender
+						%span.time= distance_of_time_in_words_to_now(article.created_at) + ' Ago'			

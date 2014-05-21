@@ -22,6 +22,9 @@
 
 $(function(){
   $(document).foundation();
+  loadTwitterSdk();
+  loadGoogleWidgetSdk();
+  gapi.plusone.go();
 
   /*$('.select2').select2({
     width: '100%'
@@ -47,4 +50,43 @@ $(function(){
       return false;
     }
   });
+
+  $('#share').hover(function() {
+    if($('.google img').is(":visible")) {
+      $('<div class="g-plusone" data-annotation="none"></div>').appendTo('li.google');
+      $('.google img').hide();
+      gapi.plusone.go();
+    }
+
+    if($('.facebook img').is(":visible")) {
+      $('<div class="fb-like" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>').appendTo('li.facebook');
+      $('.facebook img').hide();
+      loadFacebookSdk();
+    }
+  });
+
+  function loadFacebookSdk() {
+    $('<div id="fb-root"></div>').prependTo('body');
+    (function(d, s, id) {
+      var js, fjs = d.getElementsByTagName(s)[0];
+      if (d.getElementById(id)) return;
+      js = d.createElement(s); js.id = id;
+      js.src = "//connect.facebook.net/nl_NL/sdk.js#xfbml=1&version=v2.0";
+      fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+  }
+
+  function loadTwitterSdk() {
+    !function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+'://platform.twitter.com/widgets.js';fjs.parentNode.insertBefore(js,fjs);}}(document, 'script', 'twitter-wjs');
+  }
+
+  function loadGoogleWidgetSdk() {
+    window.___gcfg = {lang: 'nl'};
+
+    (function() {
+      var po = document.createElement('script'); po.type = 'text/javascript'; po.async = true;
+      po.src = 'https://apis.google.com/js/platform.js';
+      var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
+    })();
+  }
 });

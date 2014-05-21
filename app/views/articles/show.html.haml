@@ -10,7 +10,7 @@
 			= markdown @article.body
 
 	%aside#sidebar.small-10.small-offset-1.large-4.large-offset-0.columns
-		.widget
+		.widget.recent-posts
 			%h3.widget-title Recent Posts
 			.widget-content
 				%ul
@@ -21,10 +21,27 @@
 								%p
 									= article.body.gsub(/[^0-9a-z ?.,:"']/i, '').truncate(80)
 									= link_to 'Read more', article_path(article)
+		
+		.widget.social#share
+			%h3.widget-title Social
+			.widget-content
+				%ul.img
+					%li.google= image_tag 'plus-button.png', :alt => 'Google+ +1 button', :title => '+1 this page!', :width => '36', :height => '22'
+					%li.facebook= image_tag 'like-button.png', :alt => 'Facebook like button', :title => 'Like this page!', :width => '78', :height => '20'
+					%li.twitter 
+						%a.twitter-share-button{:data => { :via => "WesleySmits93", :count => "none" }, :href => "https://twitter.com/share"} Tweet
 
+		%a.twitter-timeline{:href => 'https://twitter.com/WesleySmits93', :data => {'widget-id' => '432152717226561536'}} Tweets van @WesleySmits93
 
-
+		.widget.google-widget
+			%h3.widget-title Follow me on Google+!
+			.widget-content
+				.g-person{"data-href" => "//plus.google.com/114334906202592742096", "data-rel" => "author"}
+		.widget.google-widget
+			%h3.widget-title Join my Community!
+			.widget-content
+				.g-community{"data-href" => "https://plus.google.com/communities/116489071632785811415"}
+				
 = link_to 'Back to overview page', articles_path, :class => "button [radius round]"
 = link_to 'Edit article', edit_article_path(@article), :class => "button [radius secondary round]"
 = link_to 'Delete article', article_path(@article), :class => "button [radius alert round]", :method => :delete, data: { confirm: "Are you sure you want to delete this article?"}
-
