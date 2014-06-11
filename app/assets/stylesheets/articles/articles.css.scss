@@ -1,10 +1,30 @@
-@import "font-awesome";
-@import "extends";
+//@import "font-awesome";
+//@import "shared/extends";
 $link-color: #1fb2ff;
 
 a:hover {
 	text-decoration: underline;
 }
+
+.intro {
+		background: #1fb2ff;
+		color: #fff;
+		padding: 30px 0 60px 0;
+
+		.title {
+			margin-top: 0;
+			color: inherit;
+			border-bottom: 1px solid #fff;
+			padding-bottom: 5px;
+			display: inline;
+			font-size: 30px;
+			font-size: 1,8750em; /* 30 / 16 */
+			font-weight: bold;
+		}
+		.tagline {
+			margin-top: 10px;
+		}
+	}
 
 body.blog {
 	background: #F2F2F2;
@@ -15,8 +35,9 @@ body.blog {
 	-webkit-font-smoothing: antialiased;
 
 	#header {
-		max-width: none;
 		background: #373737;
+		/* max-width: none;
+		
 
 		.container {
 			position: relative;
@@ -40,30 +61,10 @@ body.blog {
 
 		ul {
 			text-align: right;
-		}
+		} */
 	}
 	#content {
 		margin-top: 85px;
-	}
-
-	.intro {
-		background: #1fb2ff;
-		color: #fff;
-		padding: 30px 0 60px 0;
-
-		.title {
-			margin-top: 0;
-			color: inherit;
-			border-bottom: 1px solid #fff;
-			padding-bottom: 5px;
-			display: inline;
-			font-size: 30px;
-			font-size: 1,8750em; /* 30 / 16 */
-			font-weight: bold;
-		}
-		.tagline {
-			margin-top: 10px;
-		}
 	}
 
 	#posts {

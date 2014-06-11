@@ -3,44 +3,37 @@
 		%h2.title= @article.title
 
 .container.row
-	#post-wrapper.small-10.small-offset-1.large-7.large-offset-0.columns
+	#post-wrapper.small-10.small-offset-1.large-8.large-offset-0.columns
 		- if @article.image.exists? then
-			= image_tag @article.image.url
+			= image_tag @article.image.url, width: '768', alt: @article.title, title: @article.title
 		%p.body
 			= markdown @article.body
-
-	%aside#sidebar.small-10.small-offset-1.large-4.large-offset-0.columns
-		.widget.recent-posts
-			%h3.widget-title Recent Posts
-			.widget-content
+		.post-meta
+			.published
+				%i.fa.fa-calendar
+				%span= @article.created_at.to_date.to_formatted_s(:long)
+				%meta{content: @article.created_at.utc.iso8601, itemprop: "datePublished"}
+			.author
+				%i.fa.fa-user
+				%span 
+					by 
+					= link_to 'Wesley Smits', 'https://www.google.com/+WesleySmits', title: 'Wesley Smits on Google+', rel: 'author'
+			.social-sharing
+				%strong Share this post
 				%ul
-					- @articles.each do |article|
-						%li
-							= link_to article.title, article_path(article), :class => 'item-title'
-							.itemContent
-								%p
-									= article.body.gsub(/[^0-9a-z ?.,:"']/i, '').truncate(80)
-									= link_to 'Read more', article_path(article)
-		
-		.widget.social#share
-			%h3.widget-title Social
-			.widget-content
-				%ul.img
-					%li.google= image_tag 'plus-button.png', :alt => 'Google+ +1 button', :title => '+1 this page!', :width => '36', :height => '22'
-					%li.facebook= image_tag 'like-button.png', :alt => 'Facebook like button', :title => 'Like this page!', :width => '78', :height => '20'
-					%li.twitter 
-						%a.twitter-share-button{:data => { :via => "WesleySmits93", :count => "none" }, :href => "https://twitter.com/share"} Tweet
-
-		%a.twitter-timeline{:href => 'https://twitter.com/WesleySmits93', :data => {'widget-id' => '432152717226561536'}} Tweets van @WesleySmits93
-
-		.widget.google-widget
-			%h3.widget-title Follow me on Google+!
-			.widget-content
-				.g-person{"data-href" => "//plus.google.com/114334906202592742096", "data-rel" => "author"}
-		.widget.google-widget
-			%h3.widget-title Join my Community!
-			.widget-content
-				.g-community{"data-href" => "https://plus.google.com/communities/116489071632785811415"}
+					%li.google
+						%a{:href => 'https://www.google.com/+WesleySmits', :title => 'Wesley Smits on Google+', :target => '_blank'}
+							%i.fa.fa-google-plus
+					%li.facebook
+						%a{:href => 'https://www.facebook.com/wesley.robert.smits', :title => 'Wesley Smits on Facebook', :target => '_blank'}
+							%i.fa.fa-facebook
+					%li.twitter
+						%a{:href => 'https://twitter.com/WesleySmits93', :title => 'Wesley Smits on Twitter', :target => '_blank'}
+							%i.fa.fa-twitter
+					%li.linkedin
+						%a{:href => 'https://www.linkedin.com/in/wesleysmits93', :title => 'Wesley Smits on LinkedIn', :target => '_blank'}
+							%i.fa.fa-linkedin
+	= render 'partials/sidebar'
 				
 = link_to 'Back to overview page', articles_path, :class => "button [radius round]"
 = link_to 'Edit article', edit_article_path(@article), :class => "button [radius secondary round]"

@@ -8,14 +8,42 @@
  * You're free to add application-wide styles to this file and they'll appear at the top of the
  * compiled file, but it's generally better to create a new file per style scope.
  *
- *= require mixins
- *= require extends
+ *= require shared/mixins
+ *= require shared/extends
  *= require font-awesome
  *= require_self
- *= require foundation_and_overrides
+ *= require shared/foundation_and_overrides
  *= require_tree .
  */
 
-@import "font-awesome";
+@import "shared/header";
+@import "shared/footer";
 
-.hidden { display: none;}
+.hidden {
+	display: none;
+}
+
+.full-height {
+	height: 100%;
+}
+.container {
+	width: 100%;
+	max-width: 1170px;
+	margin: 0 auto;
+}
+.block {
+	padding: 70px 0;
+
+	.title { font-size: 3.5em; text-align: center; padding: 70px 0; }
+}
+.more-info {
+	display: block;
+	margin: 70px auto!important;
+}
+
+/* Temporary fix 
+body {
+	position: relative;
+	top: 71px;
+}
+*/

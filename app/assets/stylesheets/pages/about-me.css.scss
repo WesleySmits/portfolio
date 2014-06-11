@@ -1,0 +1,48 @@
+body.page {
+	background: #F2F2F2;
+	color: #777;
+
+	.intro { margin-top: 71px;}
+}
+
+.page-wrapper {
+	padding: 20px;
+	background: #fff;
+	border: 1px solid #ddd;
+	margin-top: -20px;
+
+	.title {
+		padding: 10px 0;
+		text-align: center;
+	}
+
+	h2, h3 {
+	margin-top: 20px;
+	margin-bottom: 10px;
+	}
+
+	h2 {
+		font-size: 30px;
+		font-size: 1,8750em; /* 30 / 16 */
+	}
+	h3 {
+		font-size: 24px;
+		font-size: 1,5em; /* 24 / 16 */
+	}
+	h4 {
+		font-size: 18px;
+		font-size: 1.1250em /* 18 / 16 */
+	}
+	p {
+		margin: 0 0 10px;
+	}
+	blockquote p{
+		font-style: italic;
+	}
+	img {
+		width: 100%;
+		max-width: 100%;
+		margin: 0 auto;
+		display: block;
+	}
+}

@@ -1,5 +1,24 @@
-%h1 Portfolio
-%ul.project-list
-  - @projects.each do |project|
-    %li= link_to project.name, project_path(project)
-= link_to "New project", new_project_path, :class => "button [radius round]"
+%section#portfolio.block
+  .container
+    %h2.title Portfolio
+    - @projects.each do |project|
+      %section{:id => "#{project.id}", :class => 'project hidden'}  
+        .left
+          %h3= project.name
+          %p.description= project.description
+          %p.url= link_to project.url, project.url
+        .right
+          .project-slider
+            - project.assets.each do |image|
+              = image_tag image.image_file_name, :class => 'project-img', :width => '644'
+          %a.previous{href: '/#'}
+          %a.next{href: '/#'}
+        .buttons
+          = link_to 'X', '/#', :class => 'close', :title => 'Close project window'
+
+
+    %ul{:class => 'small-block-grid-2 medium-block-grid-3 large-block-grid-4'}
+      - @projects.each do |project|
+        %li{:id => "#{project.id}",:class => "project-thumb #{project.name}", :alt => "#{project.name} logo", :title => "#{project.name}"}
+          - project.assets.take(1).each do |image|
+            = image_tag image.image_file_name

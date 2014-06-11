@@ -1,0 +1,75 @@
+.intro
+	.container
+		%h2.title About Wesley Smits
+
+#content
+	.container.row
+		.page-wrapper.small-10.small-offset-1.large-8.large-offset-0.columns
+			%section#profile
+				.container
+					= image_tag 'http://static.wesleysmits.com/img/Wesley_Smits.jpg'
+					%h2 Who am I?
+					%p
+						Well, as you may have noticed my name is Wesley Smits. I was born on the 5th of September 1993. At this moment i'm in the 4th and last year of university and i'm really looking forward to be done with it all and just start working full time.
+					
+					= image_tag 'http://www.wesleysmits.com/content/images/2014/Feb/Wesley_Smits_Maria-1.jpg'
+					%h2 My relationship
+					%p
+						The beautiful girl you see on the picture here is my girlfriend Maria. She's awesome and she has a really popular 
+						= link_to 'fashion blog.', 'http://www.classy-blog.com'
+					
+					%h2 My interests
+					= image_tag 'http://static.wesleysmits.com/img/steve-jobs-programming-quote.jpg'
+					
+					%h3 Developing websites, apps or games?
+					%p
+						Ever since I was three years old I wanted to be a game developer. It seemed like the most amazing job in the world to me and I never really stopped thinking of it. When I reached the end of highschool I had to make a choice about which direction I wanted to go. I decided to take things a bit broader than game development and choose the study 
+						= link_to 'media technology', 'http://www.hogeschoolrotterdam.nl/opleidingen/mediatechnologie/voltijd' 
+						at 
+						= link_to 'The University of Rotterdam.', 'http://www.rotterdamuniversity.com/'
+
+					= image_tag 'http://static.wesleysmits.com/img/SEO-wallpaper.jpg'
+					%h3 
+						Search Engine Optimization 
+						%abbr{:title => 'Search Engine Optimization'} (SEO)
+					%p
+						As I was learning everything about developing websites, apps, databases and more I got in contact with SEO. I still don't quite know what attracted me to it so much, but I started to read every single bit of information of it as I could. Following experts like 
+						= link_to 'Yoast', 'https://yoast.com/'
+						, 
+						and
+						= link_to 'Moz', 'http://moz.com/' 
+						I quickly learned current best practices and what the difference is between 
+						= link_to 'White-hat SEO and Black-hat SEO.', 'http://imarketingclass.com/seo-scams-black-hat-vs-white-hat/'
+					%p
+						I am still very interested in SEO as you will see on this blog. It will contain a lot of posts around SEO and everything related to SEO. Besides blogging about SEO I also teach second-year media technology students SEO at The University of Rotterdam.
+
+					= image_tag 'http://static.wesleysmits.com/img/responsive-web-design-progressive-enhancement.png'
+					%h3 Responsive Web Design & Progressive Enhancement
+					%p
+						There are a lot of web-developers nowadays who will say that people who do not use the most modern version of modern browsers should just get a better browser if they want to visit their websites. I think this statement is absolutely ridiculous. I am very attracted by the idea of building one HTML document which will be served to every browser on every device. But to serve CSS and Javascript files to the devices which can process them correctly so you will have a working and beautiful user experience on every single device and every browser that was ever created.
+					%p
+						In order to do this you should have a responsive design and use progressive enhancement best practices. I've read two books who deserve a lot of credit since i have learned almost everything I know about responsive web design and progressive enhancement.
+					%ul
+						%li= link_to 'Responsive Web Design by Ethan Marcotte', 'http://www.abookapart.com/products/responsive-web-design'
+						%li= link_to 'Designing with Progressive Enhancement by Todd Parker, Patty Toland, Scott Jehl, and Maggie Costello Wachs', 'http://filamentgroup.com/dwpe/'
+
+					%h2 Hobbies
+
+					= image_tag 'http://static.wesleysmits.com/img/super-mario-wallpaper.jpg'
+					%h3 Gaming
+					%p
+						As I mentioned before I started gaming when I was only three years old. I have played games ever since and have played games on almost every console which has been released since the Nintendo 64. I still play games sometimes now but there is little time left next to working, studying and sporting.
+
+					= image_tag 'http://static.wesleysmits.com/img/ghost-blogging-platform.jpg'
+					%h3 Blogging
+					%p
+						This website is of course an obvious example of this hobby. I love writing about subjects that affect me. SEO, travelling and other interesting subjects are not only interesting to write about. The posts are also interesting for other people to learn from. At least, i hope people will learn something from my blog posts since that why I started blogging in the first place.
+
+					= image_tag 'http://static.wesleysmits.com/img/reading-wallpaper.jpg'
+					%h3 Reading
+					%p 
+						As a child my parents used to read a lot of books to me and this eventually led to my own interest in reading books. I love fiction like The Hunger Games, Harry Potter and The Chronicles of Narnia, but also books about SEO, marketing or development.
+
+	
+						
+		= render 'partials/sidebar'

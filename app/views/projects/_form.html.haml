@@ -1,4 +1,4 @@
-= form_for(@project, :html => { :multipart => true }) do |f|
+= simple_form_for(@project, :html => { :multipart => true }) do |f|
   %ul
     - @project.errors.full_messages.each do |error|
       %li= error
@@ -14,9 +14,19 @@
       = f.text_area :description
   .row
     .small-1.columns
-      = f.label :image, :class => "left inline"
+      = f.label :url, :class => "left inline"
     .small-11.columns
-      = f.file_field :image
+      = f.text_field :url, placeholder: 'http://www.google.com'
+  .row
+    = f.simple_fields_for :assets do |a|
+      .small-1.columns
+        = a.label :image, :class => "left inline"
+      .small-11.columns
+        - if a.object.new_record?
+          = a.input :image, as: :file
+        - else
+          = image_tag a.object.image.url(:thumb)
+          = a.input_field '_destroy', as: :boolean
   .row
     .small-9.small-offset-1.columns
       = f.submit nil ,:class => "button [radius round]"

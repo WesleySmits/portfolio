@@ -1,16 +1,18 @@
 class ProjectsController < ApplicationController
-  include ProjectsHelper
-  
+
+  before_filter :find_project, only: [:show, :edit, :update, :destroy]
+  #after_action :build_assets, only: [:new, :edit]
+
   def index
     @projects = Project.all
   end
 
   def show
-    find_project
   end
 
   def new
     @project = Project.new
+    @project.assets.build
   end
 
   def create
@@ -21,20 +23,28 @@ class ProjectsController < ApplicationController
   end
 
   def edit
-    find_project
+    @project.assets.build
   end
 
   def update
-    find_project
     @project.update(project_params)
 
     redirect_to project_path(@project)
   end
 
   def destroy
-    find_project
     @project.destroy
 
     redirect_to projects_path
   end
+
+  protected
+
+    def project_params
+      params.require(:project).permit(:name, :description, :url, assets_attributes: [:_destroy, :id, :image])
+    end
+
+    def find_project
+      @project = Project.find(params[:id])
+    end
 end

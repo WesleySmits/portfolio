@@ -23,6 +23,7 @@ gem 'jquery-rails'
 
 # Turbolinks makes following links in your web application faster. Read more: https://github.com/rails/turbolinks
 gem 'turbolinks'
+gem 'jquery-turbolinks'
 
 gem 'simple_form'
 
@@ -48,6 +49,7 @@ gem 'redcarpet'
 
 # Syntax highlighter
 gem 'pygments.rb'
+gem 'rouge'
 
 # HTML / XML parser
 gem 'nokogiri'

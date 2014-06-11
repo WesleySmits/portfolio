@@ -1,15 +1,8 @@
 class Project < ActiveRecord::Base
+  has_many :assets, :dependent => :destroy
+  
   validates_presence_of :name, :on => :create, :update => "can't be blank"
   validates_presence_of :description, :on => :create, :update => "can't be blank"
-  
-  # Paperclip
-  has_attached_file :image,
-    :styles => {
-      :thumb=> "100x100#",
-      :small  => "150x150>",
-      :medium => "300x300>",
-      :large =>   "400x400>" }
-  validates_attachment :image, content_type: { content_type: ["image/jpg", "image/jpeg", "image/png", "image/gif"] }
 
-
+  accepts_nested_attributes_for :assets, :allow_destroy => true
 end

@@ -2,8 +2,8 @@
 	= @project.name
 %p.description
 	= @project.description
-- if @project.image.exists? then
-	= image_tag @project.image.url
+- @project.assets.each do |image|
+	= image_tag image.image_file_name, :width => '200'
 %br
 = link_to 'Back to overview page', projects_path, :class => "button [radius round]"
 = link_to 'Edit project', edit_project_path(@project), :class => "button [radius secondary round]"

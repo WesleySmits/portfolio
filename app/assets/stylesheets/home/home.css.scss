@@ -1,0 +1,282 @@
+@import 'shared/mixins';
+@import 'shared/extends';
+@import 'shared/foundation_and_overrides';
+@import 'shared/hover-min';
+
+html, body {
+	width: 100%;
+	height: 100%;
+	font-size: 100%;
+	abbr { color: inherit; }
+}
+
+img {
+	max-width: 100%;
+}
+
+@-moz-keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 0; }
+}
+@-o-keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 100%; }
+}
+@-webkit-keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 100%; }
+}
+@keyframes animatedBackground {
+	from { background-position: 0 0; }
+	to { background-position: 100% 100%; }
+}
+
+#intro {
+	min-height: 600px;
+	height: 100%;
+	text-align: center;
+	position: relative;
+
+	background-color: #000000;
+	background-image:
+	radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 50px),
+	radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+	radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+	radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+
+	background-image: url(../images/wolken.png), url(../images/sterren.png);
+	background-image: image-url("wolken.png"), image-url("sterren.png");
+	background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+
+	-moz-animation: animatedBackground 20s linear infinite;
+	-webkit-animation: animatedBackground 20s linear infinite;
+	-o-animation: animatedBackground 20s linear infinite;
+	animation: animatedBackground 20s linear infinite;
+
+	.welcome {
+		width: 80%;
+		max-width: 1170px;
+		position: absolute;
+		top: 40%;
+		left: 20%;
+	}
+
+	.intro-title {
+		font-size: 2em;
+		letter-spacing: -0.05em;
+		@media #{$medium-up} { font-size: 4em; }
+		@media #{$large-up} { font-size: 6em; }
+	}
+	.intro-caption {
+		font-size: 1em;
+
+		@media #{$medium-up} { font-size: 2em; }
+	}
+	.intro-title, .intro-caption {
+		color: #fff;
+	}
+}
+
+#about-me {
+	background: #f5f5f5;
+	min-height: 100%;
+	color: #6b6b6b;
+
+	.wrapper {
+		@extend %clearfix;
+	}
+
+	h2, h3, h4 { color: inherit; padding: 20px 0; text-align: center;}
+	.skillset li {
+		background: #FFFFFF;
+		color: white;
+		padding: 0px;
+		margin-right: 35px;
+		text-align: center;
+		width: 170px;
+
+		&.last { margin-right: 0; }
+
+		h4 {
+			padding: 0;
+			width: 100%;
+			margin: 0;
+			background: #FFFFFF;
+			color: #000000;
+			border-bottom: 1px solid #000;
+			padding: 9px 0;
+		}
+
+		img {
+			padding: 10px;
+		}
+	}
+
+	.row {
+		@extend %clearfix;
+	}
+
+}
+
+#portfolio {
+	min-height: 100%;
+	background: #eceef1;
+
+	li { 
+		width: 253px;
+		height: 250px;
+		overflow: hidden;
+		border: 3px solid #000;
+		padding: 0;
+		margin: 20px 20px;
+		position: relative;
+
+		&.butzi { background: #f1c40f; }
+		&.fabriq { background: #2ecc71;}
+		&.tord { background: #0081E9;}
+		&.vicinity { background: #ecf0f1;}
+		&.approxiv { background: #bdc3c7; }
+	}
+	img {
+		-webkit-transition: all 200ms ease-out;
+		-moz-transition: all 200ms ease-out;
+		-o-transition: all 200ms ease-out;
+		transition: all 200ms ease-out; 
+	}
+
+	.project {
+		@extend %clearfix;
+		height: 500px;
+		position: relative;
+
+		.left {
+			float: left;
+			width: 40%;
+		}
+		.right {
+			float: right;
+			width: 55%;
+			height: 100%;
+			position: relative;
+
+			.previous {
+				@include sliderArrows(left);
+			}
+			.next {
+				@include sliderArrows(right);
+			}
+		}
+
+		.project-slider {
+			img {
+				display: none;
+				max-height: 500px;
+				-webkit-transition: all 1s ease-in-out;
+		    -moz-transition: all 1s ease-in-out;
+		    -o-transition: all 1s ease-in-out;
+		    -ms-transition: all 1s ease-in-out;
+		    transition: all 1s ease-in-out;
+		    height: 500px;
+		    width: auto;
+		    margin: 0 auto;
+
+				&.current {
+					display: block;
+				}
+			}
+		}
+
+		.buttons {
+			position: absolute;
+			top: 0;
+			right: 0;
+		}
+	}
+
+}
+
+#contact {
+	color: #fff;
+	min-height: 100%;
+
+	.title { color: inherit; }
+	section{ background-color: #fff; }
+
+	background-color: #000000;
+	background-image:
+	radial-gradient(white, rgba(255,255,255,.2) 2px, transparent 50px),
+	radial-gradient(white, rgba(255,255,255,.15) 1px, transparent 30px),
+	radial-gradient(white, rgba(255,255,255,.1) 2px, transparent 40px),
+	radial-gradient(rgba(255,255,255,.4), rgba(255,255,255,.1) 2px, transparent 30px);
+
+	background-image: url(../images/wolken.png), url(../images/sterren.png);
+	background-image: image-url("wolken.png"), image-url("sterren.png");
+	background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px; 
+
+	-moz-animation: animatedBackground 20s linear infinite;
+	-webkit-animation: animatedBackground 20s linear infinite;
+	-o-animation: animatedBackground 20s linear infinite;
+	animation: animatedBackground 20s linear infinite;
+
+	.social, .contact-form {
+		border: 1px solid;
+		padding: 20px;
+		h3 {
+			border-bottom: 1px solid;
+			@include font-size(24);
+		}
+
+		li {
+			height: 60px;
+			width: 60px;
+			background:#000;
+			list-style-type: none;
+			display: inline-block;
+			border: 1px solid #bdbdbd;
+			-webkit-transition: all 0.50s ease;
+			-moz-transition: all 0.50s ease;
+			-o-transition: all 0.50s ease;
+			-ms-transition: all 0.50s ease;
+			transition: all 0.50s ease;
+
+			a {
+				display: block;
+				width: 100%;
+				height: 100%;
+				padding: 20px;
+			}
+
+			@include border-radius(10px);
+
+			&.facebook a { padding-left: 24px; }
+
+			&.google:hover {
+				background-color: #d13f2d;
+				border-color: #d13f2d;
+			}
+			&.facebook:hover {
+				background-color: #3b5998;
+				border-color: #3b5998;
+			}
+			&.twitter:hover {
+				background-color: #44ccf6;
+				border-color: #44ccf6;
+			}
+			&.linkedin:hover {
+				background-color: #0275b6;
+				border-color: #0275b6;
+			}
+			&.other:hover {
+				background-color: #3A75Ff;
+				border-color: #3A75Ff;
+			}
+
+			i {
+				color: #fff;
+				@include font-size(24);
+
+				&.fa-envelope { @include font-size(20); }
+			}
+		}
+	}
+}

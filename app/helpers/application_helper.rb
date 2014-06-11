@@ -1,10 +1,10 @@
 module ApplicationHelper
   class HTMLwithPygments < Redcarpet::Render::HTML
+
+    include Rouge::Plugins::Redcarpet # yep, that's it.
+    
     def block_code(code, language)
-      sha = Digest::SHA1.hexdigest(code)
-      Rails.cache.fetch ["code", language, sha].join('-') do
-        Pygments.highlight(code, lexer: language)
-      end
+      Rouge.highlight(code, language || 'text', 'html') 
     end
   end
 
@@ -19,6 +19,7 @@ module ApplicationHelper
       superscript: true
     }
     Redcarpet::Markdown.new(renderer, options).render(text).html_safe
+
   end
 
 

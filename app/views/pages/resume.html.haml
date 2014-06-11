@@ -1,0 +1,178 @@
+#resume.container{itemscope: "", itemtype: "http://schema.org/Person"}
+	%section.resume-intro.resume-block
+		.photo.left
+			= image_tag 'http://static.wesleysmits.com/img/Wesley-Smits250x250.jpg', title: "Wesley Smits", alt: "Wesley Smits", width: "250", height: "250", itemprop: "image"
+			%hgroup
+				%h4 
+					%span{itemprop: "givenName"} Wesley 
+					%meta{itemprop: "additionalName", content: "Robert"}
+					%span{itemprop: "familyName"} Smits
+					%meta{itemprop: "name", content: "Wesley Robert Smits"}
+				%h5{itemprop: "jobTitle"} Webdeveloper
+				%meta{itemprop: "birthDate", content: "1993-09-05"}
+				%meta{itemprop: "gender", content: "male"}
+				%meta{itemprop: "nationality", content: "http://en.wikipedia.org/wiki/The_Netherlands"}
+		.welcome.right
+			%h1.title Welcome to my r&eacute;sum&eacute;!
+			%p
+				I'm a passionate webdeveloper from Holland capable of creating awesome semantically correct and 
+				%abbr{title: "Search Engine Optimization"} SEO 
+				optimized websites.
+				I love creating and optimizing a website with a clean and smart codebase.
+				This ensures that a website can load fast and that search engines are able to crawl it without issues.
+
+	%section.resume-education.resume-block
+		.education.left
+			%h2.title Education
+			%table
+				%tr
+					%td.course.left
+						%h4 Primary School
+						%span September 1997 - July 2005
+					%td.school.right
+						%h4 Basisschool De Knotwilg
+						%span Papendrecht, The Netherlands
+				%tr
+					%td.course.left
+						%h4 High School
+						%span September 2005 - July 2010
+					%td.school.right
+						%h4 Willem de Zwijger College
+						%span Papendrecht, The Netherlands
+				%tr
+					%td.course.left
+						%h4 University
+						%span September 2010 - Current
+					%td.school.right
+						%h4 The University of Rotterdam
+						%span Rotterdam, The Netherlands 
+
+		.languages.left
+			%h2.title Languages
+			%ul
+				%li
+					%h4.language Dutch
+					%span.status Native
+				%li
+					%h4.language English
+					%span.status Fluent
+				%li
+					%h4.language German
+					%span.status Basic
+
+	%section.resume-experience.resume-block
+		%h2.title Work Experience
+		%table
+			%tr
+				%td
+					%h4 
+						= link_to 'Internetbureau Cream', 'http://www.cream.nl/'
+					%span September 2012 - Februari 2013
+				%td
+					%h4
+						Webdevelopment Intern
+					%span
+						I was responsible for developing a fashion webshop on the Magento E-Commerce platform.
+
+			%tr
+				%td
+					%h4
+						= link_to 'WesTrade Telecom', 'http://www.westradetelecom.com/'
+					%span Februari 2013 - June 2014
+				%td
+					%h4 
+						%abbr{title: "Search Engine Optimization"} SEO 
+						Consultant + Webdeveloper
+					%span
+						Involved in the search engine optimization strategy of all WesTrade websites.
+
+	%section.resume-skills.resume-block{itemscope: "", itemtype: "http://schema.org/ItemList"}
+		%h2.title{itemprop: "name"} Skillset
+		
+		#skills-left
+			%h4{itemprop: "about"} Development
+			%ul
+				%li.html{itemprop: "itemListElement"} HTML5
+				%li.css{itemprop: "itemListElement"} CSS3
+				%li.javascript{itemprop: "itemListElement"} Javascript
+				%li.jquery{itemprop: "itemListElement"} jQuery
+				%li.php{itemprop: "itemListElement"} PHP
+				%li.mysql{itemprop: "itemListElement"} SQL Databases
+				%li.wordpress{itemprop: "itemListElement"} Wordpress
+				%li.rails{itemprop: "itemListElement"} Ruby on Rails
+				%li.magento{itemprop: "itemListElement"} Magento
+
+		#skills-right
+			%h4{itemprop: "about"} Software
+			%ul
+				%li.pixelmator{itemprop: "itemListElement"} Pixelmator
+				%li.office{itemprop: "itemListElement"} Microsoft Office
+				%li.iwork{itemprop: "itemListElement"} Apple iWork
+				%li.terminal{itemprop: "itemListElement"} OS X Terminal
+
+	%section.resume-contact.resume-block
+		%h2.title Contact
+
+		.online-contact-details
+			%h3 Online
+			%ul.online
+				%li.facebook
+					%a{href: "https://www.facebook.com/wesley.robert.smits"}
+						%i.fa.fa-facebook
+						https://www.facebook.com/wesley.robert.smits
+				%li.twitter
+					%a{href: "https://twitter.com/WesleySmits93"}
+						%i.fa.fa-twitter
+						https://twitter.com/WesleySmits93
+				%li.googleplus
+					%a{href: "https://www.google.com/+WesleySmits"}
+						%i.fa.fa-google-plus
+						https://www.google.com/+WesleySmits
+				%li.linkedin
+					%a{href: "https://www.linkedin.com/in/wesleysmits9"}
+						%i.fa.fa-linkedin
+						https://www.linkedin.com/in/wesleysmits9
+				%li.github
+					%a{href: "https://github.com/WesleySmits/"}	
+						%i.fa.fa-github
+						https://github.com/WesleySmits/
+				%li.youtube
+					%a{href: "https://www.youtube.com/user/WesleyRobertSmits"}
+						%i.fa.fa-youtube
+						https://www.youtube.com/user/WesleyRobertSmits
+				%li.skype
+					%a{href: "skype:facebook:wesley.robert.smits"}	
+						%i.fa.fa-skype
+						wesley.robert.smits
+				%li.email
+					%a{href: "mailto:info@wesleysmits.com"}	
+						%i.fa.fa-envelope
+						info@wesleysmits.com
+					%meta{itemprop: "email", content: "info@wesleysmits.com"}
+		.offline-contact-details
+			%h3 Other contact details
+			%ul
+				%li.address{itemscope: "", itemprop: "address", itemType: "http://schema.org/PostalAddress"}
+					%i.fa.fa-home
+					%span{itemprop: "addressLocality"} Papendrecht
+					,
+					%span{itemprop: "addressRegion"}	Zuid-Holland
+					,
+					%span{itemprop: "addressCountry"} The Netherlands
+				%li.phone
+					%i.fa.fa-phone
+					%span Call me now! 
+					= link_to '+31620052000', 'tel:0031620052000', itemprop: "telephone"
+				%li.site
+					%i.fa.fa-pencil
+					= link_to 'http://www.wesleysmits.com', root_url, itemprop: "url"
+
+	%section#resume-articles
+		%h2.title Recent Articles
+		%ol
+		- @articles.each do |article|
+			%li.article{itemscope: "", itemtype: "http://schema.org/Article"}
+				= link_to article.title, article_path(article), itemprop: "name"
+				* Published at 
+				%span= article.created_at.to_date.to_formatted_s(:long_ordinal)
+				%meta{content: article.created_at.utc.iso8601, itemprop: "datePublished"}

@@ -1,19 +1,22 @@
-@import 'extends';
+@import "shared/extends";
+@import "shared/mixins";
 
 $link-color: #1fb2ff;
-
-#post-wrapper, #sidebar {
-	margin-top: -20px;
-}
 
 #post-wrapper {
 	padding: 20px;
 	background: #fff;
 	border: 1px solid #ddd;
+	margin-top: -20px;
+	max-width: 750px;
+
+	img {
+		@extend %center-block;
+	}
 
 	h2, h3 {
-	margin-top: 20px;
-	margin-bottom: 10px;
+		margin-top: 20px;
+		margin-bottom: 10px;
 	}
 
 	h2 {
@@ -37,6 +40,8 @@ $link-color: #1fb2ff;
 }
 
 #sidebar {
+	margin-top: -35px;
+
 	ul {
 		margin: 0;
 		padding: 0;
@@ -53,7 +58,7 @@ $link-color: #1fb2ff;
 	}
 
 	.widget {
-		margin-bottom: 30px;
+		margin: 15px 0;
 		background: #fff;
 		border: 1px solid #ddd;
 		padding: 20px;
@@ -80,6 +85,35 @@ $link-color: #1fb2ff;
 		&:hover {
 			color: $link-color;
 		}
+	}
+}
+
+.post-meta {
+	border-top: 1px solid #C2C2C2;
+	border-bottom: 1px solid #C2C2C2;
+	padding: 10px 0;
+
+	div {
+		display: inline-block;
+		margin-right: 20px;
+	}
+	a {
+		color: inherit;
+	}
+	ul {
+		display: inline-block;
+	}
+	.social-sharing li {
+		list-style-type: none;
+		display: inline-block;
+		border: 1px solid #C2C2C2;
+		border-radius: 25px;
+		width: 40px;
+		height: 40px;
+		padding: 3px 0px 0px 10px;
+		@include font-size(20);
+
+		&.facebook { padding-left: 14px;}
 	}
 }
 

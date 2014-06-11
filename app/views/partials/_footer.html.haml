@@ -1,0 +1,40 @@
+%footer#footer.block
+	.top.container
+		.left
+			%h2 Get In Touch!
+			%meta{itemprop: "givenName", content: "Wesley"} 
+			%meta{itemprop: "additionalName", content: "Robert"}
+			%meta{itemprop: "familyName", content: "Smits"}
+			%meta{itemprop: "name", content: "Wesley Robert Smits"}
+			%meta{itemprop: "image", content: "http://static.wesleysmits.com/img/Wesley-Smits250x250.jpg"}
+			%meta{itemprop: "birthDate", content: "1993-09-05"}
+			%meta{itemprop: "gender", content: "male"}
+			%meta{itemprop: "nationality", content: "http://en.wikipedia.org/wiki/The_Netherlands"}
+			.address{itemscope: "", itemprop: "address", itemType: "http://schema.org/PostalAddress"}
+				%i.fa.fa-home
+				%span{itemprop: "addressLocality"} Papendrecht
+				,
+				%span{itemprop: "addressRegion"}	Zuid-Holland
+				,
+				%span{itemprop: "addressCountry"} The Netherlands
+			.email
+				%i.fa.fa-envelope
+				= link_to 'info@wesleysmits.com', 'mailto:info@wesleysmits.com', itemprop: "email"
+		.right
+			%h2 Find me online!
+			%ul
+				%li.google
+					%a{:href => 'https://www.google.com/+WesleySmits', :title => 'Wesley Smits on Google+', :target => '_blank'}
+						%i.fa.fa-google-plus
+				%li.facebook
+					%a{:href => 'https://www.facebook.com/wesley.robert.smits', :title => 'Wesley Smits on Facebook', :target => '_blank'}
+						%i.fa.fa-facebook
+				%li.twitter
+					%a{:href => 'https://twitter.com/WesleySmits93', :title => 'Wesley Smits on Twitter', :target => '_blank'}
+						%i.fa.fa-twitter
+				%li.linkedin
+					%a{:href => 'https://www.linkedin.com/in/wesleysmits93', :title => 'Wesley Smits on LinkedIn', :target => '_blank'}
+						%i.fa.fa-linkedin
+	%hr
+	.bottom.container
+		%span Copyright &copy; Wesley Smits | All rights Reserved

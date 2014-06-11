@@ -11,6 +11,7 @@
 // about supported directives.
 //
 //= require jquery
+//= require jquery.turbolinks
 //= require jquery_ujs
 //= require jquery-fileupload/basic
 //= require jquery-fileupload/vendor/tmpl
@@ -21,16 +22,25 @@
 
 
 $(function(){
-  $(document).foundation();
-  loadTwitterSdk();
-  loadGoogleWidgetSdk();
-  gapi.plusone.go();
 
-  /*$('.select2').select2({
-    width: '100%'
-  });
-  */
-  $('a[href^="#"]').on('click', function(e) {
+  var current_project_id = null;
+
+  var do_on_load = function() {
+    $(document).foundation();
+    loadTwitterSdk();
+    loadGoogleWidgetSdk();
+    
+    $('.project-thumb').on('click', function() {
+      var id = $(this).attr('id');
+      changeProjectListing(id);
+    });
+
+    $('.buttons .close').on('click', function(e) {
+      e.preventDefault();
+      closeProject();
+    });
+
+    $('a[href^="#"]').on('click', function(e) {
         e.preventDefault();
 
         var target = this.hash,
@@ -41,29 +51,49 @@ $(function(){
         }, 900, 'swing');
     });
 
-  $("a").click(function() {
-    link_host = this.href.split("/")[2];
-    document_host = document.location.href.split("/")[2];
+    $("a").click(function(e) {
+      
+      if ($(this).attr('href').indexOf("#") >= 0) {
+        e.preventDefault();
+        //return false;
+      }
+      else {
+        link_host = this.href.split("/")[2];
+        document_host = document.location.href.split("/")[2];
 
-    if (link_host != document_host) {
-      window.open(this.href);
-      return false;
-    }
-  });
+        if (link_host != document_host) {
+          window.open(this.href);
+          return false;
+        }
+      }
+      return true;
+    });
 
-  $('#share').hover(function() {
-    if($('.google img').is(":visible")) {
-      $('<div class="g-plusone" data-annotation="none"></div>').appendTo('li.google');
-      $('.google img').hide();
-      gapi.plusone.go();
-    }
+    $('a.next').unbind().on('click', function(e) {
+      slideImage('next');
+      e.preventDefault();
+    });
+    $('a.previous').unbind().on('click', function(e) {
+      slideImage('previous');
+      e.preventDefault();
+    });
 
-    if($('.facebook img').is(":visible")) {
-      $('<div class="fb-like" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>').appendTo('li.facebook');
-      $('.facebook img').hide();
-      loadFacebookSdk();
-    }
-  });
+    $('#share').hover(function() {
+      if($('.google img').is(":visible")) {
+        $('<div class="g-plusone" data-annotation="none"></div>').appendTo('li.google');
+        $('.google img').hide();
+        gapi.plusone.go();
+      }
+
+      if($('.facebook img').is(":visible")) {
+        $('<div class="fb-like" data-layout="button" data-action="like" data-show-faces="false" data-share="false"></div>').appendTo('li.facebook');
+        $('.facebook img').hide();
+        loadFacebookSdk();
+      }
+    });
+    //End of do_on_load
+  }
+  $(document).ready(do_on_load)
 
   function loadFacebookSdk() {
     $('<div id="fb-root"></div>').prependTo('body');
@@ -89,4 +119,49 @@ $(function(){
       var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(po, s);
     })();
   }
+
+  function changeProjectListing(id) {
+    $('.current-project').removeClass('current-project');
+    if(current_project_id && id != current_project_id) {
+      $('section.project#' + current_project_id).slideUp();
+    }
+
+    var project = $('section.project#' + id);
+    project.slideDown();
+
+    current_project_id = id;
+    project.addClass('current-project');
+    //project.find('.project-img').first().show();
+    images = $('.current-project .project-img');
+    images.first().addClass('current');
+  }
+
+  function closeProject() {
+    var project = $('section.project#' + current_project_id).slideUp();
+  }
+
+  function slideImage(dir) {
+    images = $('.current-project .project-img');
+
+    if(dir == 'next') {
+      if($('.current').is(':last-child')) {
+        $('.current').removeClass('current');
+        images.first().addClass('current');
+      }
+      else {
+        $('.current-project .project-img.current').nextAll('.current-project .project-img:first').andSelf().toggleClass("current");
+      }
+    }
+    else if(dir == 'previous') {
+      if($('.current').is(':first-child')) {
+        $('.current').removeClass('current');
+        images.last().addClass('current')
+      }
+      else {
+        $('.current-project .project-img.current').prevAll('.current-project .project-img:first').andSelf().toggleClass("current");
+      }
+    }
+
+  }
+
 });
